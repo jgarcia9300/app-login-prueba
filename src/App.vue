@@ -1,28 +1,45 @@
 <!-- //interfaz -->
 <template>
 <div id="app">
-  <div class="hero is-white is-gradient is-bold">
-    <div class="hero-body">
-
-      <h1 class="title">
-
-        <span class="has-text-sucess"> Notisalud</span>
-        <span class="subtitle"> Noticias</span>
-
-      </h1>
+<section class="hero">
+<nav class="navbar is-white" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://www.univalle.edu.co">
+      <img src="https://www.univalle.edu.co/images/logo.jpg" width="245" height="300">
+    </a>
     
-    </div>
-
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
 
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+      <a class="navbar-item">
+        Acceder
+      </a>
+
+      
+      </div>
+    </div>
+  
+
+ 
+</nav>
+</section>
 
   
   <button v-on:click="fetch">Consultar</button>
 
-
-
   <div v-for="character of characters" v-bind:key="character.id">
    {{ character }}
+   
   </div>
 </div>
 </template>
@@ -58,8 +75,12 @@ export default {
     }
   }
 };
+
+
 </script>
 
 <style lang="scss">
 @import "~bulma/css/bulma.css"
+
+
 </style>
