@@ -41,13 +41,14 @@
         sm="4"
       >
       
-        <div v-for="character of characters" v-bind:key="character.id">
+        <div v-for="nota of notas" v-bind:key="nota.id">
+          {{ nota }}
           <v-card>
         <v-img>
       </v-img>
       <v-card-title>
       </v-card-title>
-      {{ character }}
+      
     </v-card>
   </div>
     </v-col>
@@ -66,7 +67,7 @@
 
 <script>
 // librerias
-import axios from "axios";
+//import axios from "axios";
 
 
 export default {
@@ -74,21 +75,38 @@ export default {
   data: function (){
       return{
         drawer: false,
-        characters: []
+        notas: []
+
       };
   },
 
   methods:{
     fetch(){
-      axios
-      .get("https://rickandmortyapi.com/api/character")
-      .then(res => {
-          this.characters = res.data.results;
-          console.log(res.data);
-        })
-        .catch(err => {
-          console.log(err);
-        })
+      var axios = require("axios");
+
+    const axiosInstance = axios.create({
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      }
+    });
+
+    axiosInstance
+      .get("https://notisalud-api.herokuapp.com/api/notas")
+      .then(response => {
+        console.log(response);
+      })
+      .catch(e => console.log(e));
+
+
+      // axios
+      // .get("https://notisalud-3r6s9b3vm-wilmerwave.vercel.app")
+      // .then(res => {
+      //     this.notas = res.data.results;
+      //     console.log(res.data);
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   })
       
     }
   }
