@@ -2,6 +2,9 @@
 <template>
 
 <v-app>
+  <RouterView/>
+  
+
   <v-toolbar app dark 
   color="red-darken-4 white--text" 
   density="compact">
@@ -22,6 +25,7 @@
       <v-btn variant="outlined">Acceder</v-btn>
     </v-toolbar>
 
+    
 
     <v-navigation-drawer app v-model="drawer" temporary>
       <v-list>
@@ -29,34 +33,20 @@
       </v-list> 
     </v-navigation-drawer>
 
-
-  <v-content>
-    <v-btn  variant="outlined" v-on:click="fetch">Consultar</v-btn>
-    <v-container class="bg-surface-variant">
-    <v-row no-gutters>
-      <v-col
-        v-for="n in 3"
-        :key="n"
-        cols="12"
-        sm="4"
-      >
-      
-        <div v-for="nota of notas" v-bind:key="nota.id">
-          {{ nota }}
-          <v-card>
-        <v-img>
-      </v-img>
-      <v-card-title>
-      </v-card-title>
-      
-    </v-card>
-  </div>
-    </v-col>
-    </v-row>
+  <v-main>
   
-     </v-container>
+  <v-content>
     
+    <div id="app">
+    <v-btn  variant="outlined" v-on:click="fetch">Consultar</v-btn>
+    
+    <div v-for="nota of notas" v-bind:key="nota.id">
+          {{ nota }}
+        </div>
+      </div>
+  
   </v-content>
+</v-main>
   
 
 </v-app>
@@ -67,7 +57,7 @@
 
 <script>
 // librerias
-//import axios from "axios";
+
 
 
 export default {
@@ -92,10 +82,12 @@ export default {
 
     axiosInstance
       .get("https://notisalud-api.herokuapp.com/api/notas")
-      .then(response => {
-        console.log(response);
+      .then(res => {
+        this.notas = res.data;
       })
-      .catch(e => console.log(e));
+      .catch(err => {
+      console.log(err);
+    })
 
 
       // axios
