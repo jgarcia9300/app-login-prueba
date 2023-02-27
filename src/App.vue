@@ -18,12 +18,25 @@
         contain
       ></v-img>
       <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title >Notisalud</v-toolbar-title>
+      <v-toolbar-title >Noticias Facultad de Salud</v-toolbar-title>
       
       <v-spacer></v-spacer>
       
       <v-btn variant="outlined">Acceder</v-btn>
     </v-toolbar>
+
+    
+  <v-parallax
+    height="100"
+    src="https://scontent.fclo2-2.fna.fbcdn.net/v/t39.30808-6/305396410_507464941383752_7038400473176434653_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=j1pVJ9_V3VgAX8f37DO&_nc_ht=scontent.fclo2-2.fna&oh=00_AfBFvpbfqRSa8yUf1rKUO-i7NrQSHgH-Jg_iVRl07f264A&oe=6402CC59"
+  >
+  <div class="d-flex flex-column fill-height justify-center align-center text-white">
+      <h1 class="text-h4 font-weight-thin mb-4">
+        Bienvenidos
+      </h1>
+     
+    </div>
+</v-parallax>
 
     
 
@@ -36,15 +49,41 @@
   <v-main>
   
   <v-content>
-    
-    <div id="app">
-    <v-btn  variant="outlined" v-on:click="fetch">Consultar</v-btn>
-    
-    <div v-for="nota of notas" v-bind:key="nota.id">
-          {{ nota }}
-        </div>
+    <div class="d-flex justify-center mb-6 ">
+      <v-sheet
+        v-for="n in 1"
+        :key="n"
+        class="ma-2 pa-2"
+      >
+    <v-btn variant="outlined" v-on:click="fetch">Consultar</v-btn>
+      <v-autocomplete
+    label="Buscar">
+    </v-autocomplete>
+  </v-sheet>
+  </div>
+
+    <v-container class="mb-6">
+      <v-row >
+        <v-col>
+    <div  v-for="nota of notas" v-bind:key="nota.id">
+      <v-card class="mx-auto" max-width="400">
+        <v-img
+        class="align-end text-white"
+         height="200"
+          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+          cover>
+
+        <v-card-title >
+      <h5>{{ nota.nombrenota }}</h5>
+       </v-card-title>
+      </v-img>
+      </v-card>
       </div>
-  
+        </v-col>
+
+      </v-row>
+
+    </v-container>
   </v-content>
 </v-main>
   
