@@ -120,7 +120,7 @@ export default {
     });
 
     axiosInstance
-      .get("https://notisalud-api.herokuapp.com/api/notas")
+      .get("https://notisalud-api-production.up.railway.app/api/notas")
       .then(res => {
         this.notas = res.data;
       })
