@@ -3,30 +3,34 @@
 import App from './App.vue'
 import Form from './components/RegisterNota'
 import PaginaPrueba from './components/PaginaPrueba'
+
 import { createWebHistory, createRouter } from 'vue-router'
 
 
 
 const routes = [
+    
     {path: '/', 
-    name: 'home',
+    name: 'Noticias',
     component: App
     },
     {
-    path: '/pagina', 
-    name: 'home',
+    path: '/test1', 
+    name: 'Test',
     component: PaginaPrueba
     },
     {
     path:'/formnotas',
-    name: 'home', 
+    name: 'Registro', 
     component: Form}
 
 ]
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory(),
     routes
 })
 
  export default router
+
+ //process.env.BASE_URL

@@ -1,6 +1,6 @@
 import { createApp} from 'vue'
 //import App from './App.vue'
-import PaginaPrueba from './components/RegisterNota'
+import PaginaInicio from './components/PaginaInicio'
 import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
 import router from './router'
@@ -31,8 +31,8 @@ loadFonts()
 
 // }
 
-createApp(PaginaPrueba)
-//createApp(App)
+//createApp(PaginaPrueba)
+createApp(PaginaInicio)
   .use(router)
   .use(vuetify)
   .mount('#app')
