@@ -28,27 +28,28 @@
 
   <v-main>
     
-  <v-content>
-    <div class="d-flex justify-center mb-6 ">
+  
+  <div class="d-flex justify-center mb-6 ">
       <v-sheet
         v-for="n in 1"
-        :key="n"
+        :key=n
         class="ma-2 pa-2"
       >
-    <v-btn variant="outlined" v-on:click="fetch">Consultar</v-btn>
       <v-autocomplete
     label="Buscar">
     </v-autocomplete>
+    <v-btn variant="outlined" v-on:click="fetch">Consultar</v-btn>
   </v-sheet>
   </div>
 
-  <v-container grid-list-md>
-    <v-layout row wrap>
-
-      
-    <div  v-for="nota of notas" v-bind:key="nota.id">
-      <v-flex d-flex xs12 sm6 md4>
-      <v-card class="mx-auto" max-width="400">
+  
+  <v-container  fluid>
+    <div class="text-center">
+    
+  
+        <v-row >
+        <v-col cols="12" sm="3" md="4"  v-for="nota of notas" v-bind:key="nota.id" >
+          <v-card  class="mx-auto" max-width="600" height="100%">
         <v-img
         class="align-end text-white"
          height="200"
@@ -72,15 +73,22 @@
       </v-card-actions>
       
       </v-card>
-    </v-flex>
-      </div>
-    
-    
-    </v-layout>
-    </v-container>
-  </v-content>
-</v-main>
+       
+
+      </v-col>
+    </v-row>
+    <v-pagination
+      v-model="page"
+      :length="2"
+      prev-icon="mdi-menu-left"
+      next-icon="mdi-menu-right"
+    ></v-pagination>
+  </div>
+  </v-container>
+
   
+  
+</v-main>
 
 </v-app>
 </template>
@@ -91,12 +99,12 @@
 <script>
 // librerias
 
-
-
 export default {
   name: 'App',
   data: function (){
       return{
+        page: 1,
+        pageSize: 2,
         drawer: false,
         notas: []
 
@@ -126,22 +134,9 @@ export default {
       console.log(err);
     })
 
-
-      // axios
-      // .get("https://notisalud-3r6s9b3vm-wilmerwave.vercel.app")
-      // .then(res => {
-      //     this.notas = res.data.results;
-      //     console.log(res.data);
-      //   })
-      //   .catch(err => {
-      //     console.log(err);
-      //   })
-      
     }
   }
 };
-
-
 </script>
 
 <style>

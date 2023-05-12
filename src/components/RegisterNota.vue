@@ -1,5 +1,9 @@
 <template>
-  <form>
+       <div class="text-h4">Class
+
+
+  <v-sheet width="600" class="mx-auto">
+  <v-form>
     <v-text-field
       v-model="state.name"
       :error-messages="v$.name.$errors.map(e => e.$message)"
@@ -47,7 +51,9 @@
     <v-btn @click="clear">
       clear
     </v-btn>
-  </form>
+  </v-form>
+</v-sheet>
+</div>
 </template>
 
 <script>
