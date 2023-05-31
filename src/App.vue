@@ -5,26 +5,13 @@
 
   <v-carousel height="auto" hide-delimiters>
   <v-carousel-item
-    src="https://planeacion.univalle.edu.co/images/httpsplaneacionunivalleeduco.png"
+    src="@/assets/banner1.png"
     cover
   ></v-carousel-item>
 
-  <v-carousel-item
-    src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-    cover
-  ></v-carousel-item>
-
-  <v-carousel-item
-    src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-    cover
-  ></v-carousel-item>
 </v-carousel>
     
-    <v-navigation-drawer app v-model="drawer" temporary>
-      <v-list>
-        <h3> Coming soon</h3>
-      </v-list> 
-    </v-navigation-drawer>
+
 
   <v-main>
     
@@ -35,14 +22,17 @@
         :key=n
         class="ma-2 pa-2"
       >
-      <v-autocomplete
-    label="Buscar">
-    </v-autocomplete>
+      <v-text-field
+      label="Buscar"
+      hide-details="auto"
+    ></v-text-field>
+
     <v-btn variant="outlined" v-on:click="fetch">Consultar</v-btn>
   </v-sheet>
-  </div>
 
   
+  </div>
+
   <v-container  fluid>
     <div class="text-center">
     
@@ -67,9 +57,11 @@
   
 
        <v-card-actions>
-      <v-btn color="red">
+      <v-btn href= "<h5> {{ nota.enlace }} </h5>" color="red" target="_blank">
         Saber mas
+        
       </v-btn>
+      
       </v-card-actions>
       
       </v-card>
@@ -105,12 +97,15 @@ export default {
       return{
         page: 1,
         pageSize: 2,
-        drawer: false,
         notas: []
 
       };
   },
 
+  created(){
+    this.fetch()
+  },
+  
   methods:{
     fetch(){
       var axios = require("axios");
@@ -123,8 +118,8 @@ export default {
 
     axiosInstance
       .get(
-        "https://notisalud-api.up.railway.app/api/notas")
-        //"http://localhost:9000/api/notas")
+        //"https://notisalud-api.up.railway.app/api/notas")
+        "http://localhost:9000/api/notas")
       
       
       .then(res => {
@@ -134,8 +129,10 @@ export default {
       console.log(err);
     })
 
-    }
+    },
+    
   }
+
 };
 </script>
 

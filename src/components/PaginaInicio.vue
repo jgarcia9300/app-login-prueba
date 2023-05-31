@@ -5,19 +5,25 @@
   density="compact">
       
   <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-img
-        class="mx-2"
-        src="@/assets/uvlogo.png"
-        max-height="250"
-        max-width="200"
-        contain
-      ></v-img>
-      <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title >Noticias Facultad de Salud</v-toolbar-title>
+  
+  
+    
       
+
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      
+      <v-navigation-drawer v-model="drawer" temporary color="red-darken-4 white--text">
+
+      <v-list>
+        <v-list-subheader>MENU PRINCIPAL</v-list-subheader>
+        <v-list-item prepend-icon="mdi-home" title="Home" to="/" value="home"></v-list-item>
+        
+      </v-list> 
+    </v-navigation-drawer>
+
       <v-spacer></v-spacer>
       
-      <v-btn variant="outlined">Acceder</v-btn>
+      <v-btn to="/login" variant="outlined" >Acceder</v-btn>
     </v-toolbar>
     
     <router-view></router-view>
@@ -51,9 +57,21 @@
 
 
 <script>
+export default {
+  name: 'PaginaInicio',
+  data: function (){
+      return{
+        drawer: true
+      };
+  }
+};
+
 </script>
 
 <style>
+.v-list-subheader{
+ color: white;
+}
 
 .v-footer {
   position: inherit;

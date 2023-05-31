@@ -1,5 +1,5 @@
 <template>
-       <div class="text-h4">Class
+       <div class="text-h4">Formulario de Registro
 
 
   <v-sheet width="600" class="mx-auto">

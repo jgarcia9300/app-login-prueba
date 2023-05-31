@@ -2,7 +2,7 @@
 
 import App from './App.vue'
 import Form from './components/RegisterNota'
-import PaginaPrueba from './components/PaginaPrueba'
+import InicioSesion from './components/PaginaLogin'
 
 import { createWebHistory, createRouter } from 'vue-router'
 
@@ -15,9 +15,9 @@ const routes = [
     component: App
     },
     {
-    path: '/test1', 
-    name: 'Test',
-    component: PaginaPrueba
+    path: '/login', 
+    name: 'InicioSesion',
+    component: InicioSesion
     },
     {
     path:'/formnotas',
