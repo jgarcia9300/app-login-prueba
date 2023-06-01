@@ -16,7 +16,7 @@
   <v-main>
     
   
-  <div class="d-flex justify-center mb-6 ">
+  <!-- <div class="d-flex justify-center mb-6 ">
       <v-sheet
         v-for="n in 1"
         :key=n
@@ -31,7 +31,20 @@
   </v-sheet>
 
   
-  </div>
+  </div> -->
+<div></div>
+<v-banner
+      lines="one"
+      icon="mdi-newspaper"
+      color="white"
+      class="my-4"
+    >
+      <v-banner-text>
+        Aqui recibirás las ultimas notas y noticias relacionadas con la Facultad de Salud de la Universidad del Valle
+      </v-banner-text>
+
+      
+    </v-banner>
 
   <v-container  fluid>
     <div class="text-center">
@@ -136,7 +149,12 @@ export default {
 };
 </script>
 
-<style>
-
+<style >
+  .v-banner{
+    background: #808080
+  }
+  .v-banner-text{
+    color: #FFFFFF
+  }
 </style>
 
