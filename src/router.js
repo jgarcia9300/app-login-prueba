@@ -20,7 +20,7 @@ const routes = [
     component: InicioSesion
     },
     {
-    path:'/formnotas',
+    path:'/registernotas',
     name: 'Registro', 
     component: Form}
 
@@ -33,4 +33,4 @@ const router = createRouter({
 
  export default router
 
- //process.env.BASE_URL
+ 

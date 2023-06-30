@@ -49,18 +49,17 @@
   <v-container  fluid>
     <div class="text-center">
     
-  
         <v-row >
-        <v-col cols="12" sm="3" md="4"  v-for="nota of notas" v-bind:key="nota.id" >
+        <v-col cols="12" sm="3" md="4"  v-for="nota of notas" :key="nota._id" >
           <v-card  class="mx-auto" max-width="600" height="100%">
         <v-img
         class="align-end text-white"
          height="200"
-          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+          :src="nota.imagen"
           cover>
 
         <v-card-title >
-      <h5>{{ nota.nombrenota }}</h5>
+      <p>{{ nota.nombrenota }}</p>
        </v-card-title>
       </v-img>
 
@@ -70,7 +69,7 @@
   
 
        <v-card-actions>
-      <v-btn href= "<h5> {{ nota.enlace }} </h5>" color="red" target="_blank">
+      <v-btn :href= "nota.enlace" color="red" target="_blank">
         Saber mas
         
       </v-btn>
@@ -108,8 +107,7 @@ export default {
   name: 'App',
   data: function (){
       return{
-        page: 1,
-        pageSize: 2,
+        
         notas: []
 
       };
@@ -131,12 +129,14 @@ export default {
 
     axiosInstance
       .get(
-        //"https://notisalud-api.up.railway.app/api/notas")
-        "http://localhost:9000/api/notas")
+        "https://notisalud-api.up.railway.app/api/notas")
+        //"http://localhost:9000/api/notas")
       
       
       .then(res => {
         this.notas = res.data;
+        console.log(res.data.info)
+        console.log(res.data)
       })
       .catch(err => {
       console.log(err);

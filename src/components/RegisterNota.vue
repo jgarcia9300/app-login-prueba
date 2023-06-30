@@ -8,7 +8,7 @@
       v-model="state.name"
       :error-messages="v$.name.$errors.map(e => e.$message)"
       :counter="10"
-      label="Name"
+      label="Fecha"
       required
       @input="v$.name.$touch"
       @blur="v$.name.$touch"
@@ -17,7 +17,52 @@
     <v-text-field
       v-model="state.email"
       :error-messages="v$.email.$errors.map(e => e.$message)"
-      label="E-mail"
+      label="Nombre de la nota"
+      required
+      @input="v$.email.$touch"
+      @blur="v$.email.$touch"
+    ></v-text-field>
+
+    <v-text-field
+      v-model="state.email"
+      :error-messages="v$.email.$errors.map(e => e.$message)"
+      label="Estamento"
+      required
+      @input="v$.email.$touch"
+      @blur="v$.email.$touch"
+    ></v-text-field>
+
+    <v-text-field
+      v-model="state.email"
+      :error-messages="v$.email.$errors.map(e => e.$message)"
+      label="Escuela"
+      required
+      @input="v$.email.$touch"
+      @blur="v$.email.$touch"
+    ></v-text-field>
+
+    <v-text-field
+      v-model="state.email"
+      :error-messages="v$.email.$errors.map(e => e.$message)"
+      label="Programa"
+      required
+      @input="v$.email.$touch"
+      @blur="v$.email.$touch"
+    ></v-text-field>
+
+    <v-text-field
+      v-model="state.email"
+      :error-messages="v$.email.$errors.map(e => e.$message)"
+      label="Cargo"
+      required
+      @input="v$.email.$touch"
+      @blur="v$.email.$touch"
+    ></v-text-field>
+
+    <v-text-field
+      v-model="state.email"
+      :error-messages="v$.email.$errors.map(e => e.$message)"
+      label="Extension"
       required
       @input="v$.email.$touch"
       @blur="v$.email.$touch"
@@ -27,20 +72,31 @@
       v-model="state.select"
       :items="items"
       :error-messages="v$.select.$errors.map(e => e.$message)"
-      label="Item"
+      label="Tipo de Publicacion"
       required
       @change="v$.select.$touch"
       @blur="v$.select.$touch"
     ></v-select>
 
-    <v-checkbox
-      v-model="state.checkbox"
-      :error-messages="v$.checkbox.$errors.map(e => e.$message)"
-      label="Do you agree?"
+    <v-text-field
+      v-model="state.email"
+      :error-messages="v$.email.$errors.map(e => e.$message)"
+      label="Enlace de la Noticia (Pagina salud)"
       required
-      @change="v$.checkbox.$touch"
-      @blur="v$.checkbox.$touch"
-    ></v-checkbox>
+      @input="v$.email.$touch"
+      @blur="v$.email.$touch"
+    ></v-text-field>
+
+    <v-text-field
+      v-model="state.email"
+      :error-messages="v$.email.$errors.map(e => e.$message)"
+      label="Enlace de la imagen"
+      required
+      @input="v$.email.$touch"
+      @blur="v$.email.$touch"
+    ></v-text-field>
+
+   
 
     <v-btn
       class="me-4"
@@ -75,10 +131,9 @@
       })
 
       const items = ref([
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
+        'Nota',
+        'Noticia',
+        
       ])
 
       const rules = {
@@ -103,3 +158,11 @@
     },
   }
 </script>
+
+<style>
+.text-h4{
+text-align: center;
+vertical-align: middle;
+line-height: 90px;   
+}
+</style>
