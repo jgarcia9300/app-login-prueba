@@ -17,6 +17,7 @@
       <v-list>
         <v-list-subheader>MENU PRINCIPAL</v-list-subheader>
         <v-list-item prepend-icon="mdi-home" title="Home" to="/" value="home"></v-list-item>
+        <v-list-item prepend-icon="mdi-magnify" title="Busqueda Avanzada" to="/busqavanzada" value="busquedavanzada"></v-list-item>
         
       </v-list> 
     </v-navigation-drawer>

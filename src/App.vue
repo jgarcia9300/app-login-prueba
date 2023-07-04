@@ -46,6 +46,18 @@
       
     </v-banner>
 
+    <v-container fluid>
+    <v-row justify="center" align="center">
+      <v-col cols="6" sm="4">
+        <v-text-field v-model="search" label="Buscar" v-on:keyup.enter="searchData"></v-text-field>
+      </v-col>
+      <v-col cols="2" sm="1">
+        <v-btn color="red-darken-4 white--text" v-on:click="searchData">Buscar</v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
+    
+
   <v-container  fluid>
     <div class="text-center">
     
@@ -58,13 +70,15 @@
           :src="nota.imagen"
           cover>
 
-        <v-card-title >
-      <p>{{ nota.nombrenota }}</p>
-       </v-card-title>
+        
       </v-img>
 
+      <v-card-title >
+      <p>{{ nota.nombrenota }}</p>
+       </v-card-title>
+
       <v-card-subtitle class="pt-4">
-        <h5>{{ nota.autor }}</h5>
+        <h5>Autor: {{ nota.autor }}</h5>
       </v-card-subtitle>
   
 
@@ -108,8 +122,8 @@ export default {
   data: function (){
       return{
         
-        notas: []
-
+        notas: [],
+        search: ''
       };
   },
 
@@ -119,6 +133,10 @@ export default {
   
   methods:{
     fetch(){
+      const params ={
+        name: this.search
+      };
+
       var axios = require("axios");
 
     const axiosInstance = axios.create({
@@ -144,6 +162,10 @@ export default {
 
     },
     
+    searchData(){
+      this.page= 1
+      this.fetch();
+    }
   }
 
 };
@@ -156,5 +178,9 @@ export default {
   .v-banner-text{
     color: #FFFFFF
   }
+
+  .v-text-field{
+      width: 400px;
+}
 </style>
 
