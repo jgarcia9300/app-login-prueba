@@ -50,7 +50,7 @@
     <div class="text-center">
     
         <v-row >
-        <v-col cols="12" sm="3" md="4"  v-for="nota of notas" :key="nota._id" >
+        <v-col cols="12" sm="3" md="4"  v-for="nota of notas" :key="nota.id" >
           <v-card  class="mx-auto" max-width="600" height="100%">
         <v-img
         class="align-end text-white"
@@ -129,8 +129,8 @@ export default {
 
     axiosInstance
       .get(
-        "https://notisalud-api.up.railway.app/api/notas")
-        //"http://localhost:9000/api/notas")
+        //"https://notisalud-api.up.railway.app/api/notas")
+        "http://localhost:9000/api/notas")
       
       
       .then(res => {

@@ -3,6 +3,7 @@
 import App from './App.vue'
 import Form from './components/RegisterNota'
 import InicioSesion from './components/PaginaLogin'
+import BusquedaAvanzada from './components/BusquedaAvanza'
 
 import { createWebHistory, createRouter } from 'vue-router'
 
@@ -22,7 +23,13 @@ const routes = [
     {
     path:'/registernotas',
     name: 'Registro', 
-    component: Form}
+    component: Form
+    },
+    {
+        path:'/busqavanzada',
+        name: 'BusquedaAvanzada', 
+        component: BusquedaAvanzada
+        }
 
 ]
 
