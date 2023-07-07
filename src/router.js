@@ -1,6 +1,6 @@
 
 
-import App from './App.vue'
+import PaginaPrincipal from './components/PaginaPrincipal.vue'
 import Form from './components/RegisterNota'
 import InicioSesion from './components/PaginaLogin'
 import BusquedaAvanzada from './components/BusquedaAvanza'
@@ -13,7 +13,7 @@ const routes = [
     
     {path: '/', 
     name: 'Noticias',
-    component: App
+    component: PaginaPrincipal
     },
     {
     path: '/login', 
