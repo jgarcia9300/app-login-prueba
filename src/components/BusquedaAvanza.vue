@@ -76,7 +76,9 @@ methods:{
   async searchTipo() {
       try {
         var axios = require("axios");
-        const respuesta = await axios.get("http://localhost:9000/api/tiposrc", {
+        const respuesta = await axios.get(
+          //"https://notisalud-api.onrender.com/api/tiposrc"
+          "http://localhost:9000/api/tiposrc", {
           params: {
             tipo_publicacion: this.comboSearch,
             
