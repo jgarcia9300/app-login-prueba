@@ -136,7 +136,7 @@ export default {
 
     axiosInstance
       .get(
-        //"https://notisalud-api.up.railway.app/api/notas")
+        //"https://notisalud-api.onrender.com/api/notas")
         "http://localhost:9000/api/notas")
       
       
@@ -153,7 +153,9 @@ export default {
 
     async searchNotas() {
       var axios = require("axios");
-      axios.get('http://localhost:9000/api/notassrc', {
+      axios.get(
+        //"https://notisalud-api.onrender.com/api/notassrc"
+        'http://localhost:9000/api/notassrc', {
         params: {
           query: this.search,
         },
