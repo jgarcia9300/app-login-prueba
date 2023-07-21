@@ -77,7 +77,7 @@ methods:{
       try {
         var axios = require("axios");
         const respuesta = await axios.get(
-          //"https://notisalud-api.onrender.com/api/tiposrc"
+          //"https://notisalud-api-vax3.onrender.com/api/tiposrc"
           "http://localhost:9000/api/tiposrc", {
           params: {
             tipo_publicacion: this.comboSearch,

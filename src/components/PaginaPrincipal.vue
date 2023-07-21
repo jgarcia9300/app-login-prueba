@@ -154,7 +154,7 @@ export default {
     async searchNotas() {
       var axios = require("axios");
       axios.get(
-        //"https://notisalud-api.onrender.com/api/notassrc"
+        //"https://notisalud-api-vax3.onrender.com/api/notassrc"
         'http://localhost:9000/api/notassrc', {
         params: {
           query: this.search,
