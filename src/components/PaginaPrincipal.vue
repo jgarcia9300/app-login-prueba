@@ -130,7 +130,7 @@ export default {
 
     const axiosInstance = axios.create({
       headers: {
-        'Origin': 'https://notisalud-api-vax3.onrender.com',
+        //'Origin': 'https://notisalud-api-vax3.onrender.com',
         "Access-Control-Allow-Origin": "*"
       }
     });
