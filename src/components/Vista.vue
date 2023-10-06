@@ -1,8 +1,8 @@
 <template>
   <v-app>
   <v-toolbar app dark 
-  color="red-darken-4 white--text" 
-  density="compact">
+    color="red-darken-4 white--text" 
+    density="compact">
       
   <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
   
