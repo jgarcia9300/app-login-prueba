@@ -163,11 +163,8 @@ export default {
         )
 
         .then((res) => {
-          // this.totalPages = 32;
           this.totalPages = res.data.paginasTotales
           this.notas = res.data.paginatedResults;
-          // console.log("Notas fetched", this.notas);
-          // console.log("Paginas totales", this.pages);
         })
         .catch((err) => {
           console.log(err);

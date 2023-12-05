@@ -6,9 +6,7 @@
       
   <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
   
-  
-    
-      
+
 
       <v-toolbar-side-icon></v-toolbar-side-icon>
       
